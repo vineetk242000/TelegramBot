@@ -13,7 +13,7 @@ var hashtagSuggestions=[];
 //bot commands
 
 
-const bot = new Telegraf("1315041016:AAF_44g2dWoXu-QjnsnBIP2IeHMek69hoPw") 
+const bot = new Telegraf([Your telegram bot]) 
 
 bot.start((ctx) =>{ ctx.reply(`Welcome ${ctx.from.first_name} ${ctx.from.last_name}`,
   Markup.inlineKeyboard([
@@ -154,8 +154,8 @@ async function analysis(text){
   const response=await fetch(`https://api.aylien.com/api/v1/sentiment?text=${text}`,{
     "method": "GET",
       "headers": {
-      'X-AYLIEN-TextAPI-Application-Key': '95992005feb08d0e75521b817ce02d47',
-      'X-AYLIEN-TextAPI-Application-ID': 'a3d15c16',
+      'X-AYLIEN-TextAPI-Application-Key': [Your Alyien Api key],
+      'X-AYLIEN-TextAPI-Application-ID': [Your Alyien Api Id],
       }
   })
   const data=await handleResponse(response);
@@ -168,8 +168,8 @@ async function summarization(url){
   const response=await fetch(`https://api.aylien.com/api/v1/summarize?url=${url}`,{
     "method": "GET",
     "headers": {
-      'X-AYLIEN-TextAPI-Application-Key': '95992005feb08d0e75521b817ce02d47',
-      'X-AYLIEN-TextAPI-Application-ID': 'a3d15c16',
+      'X-AYLIEN-TextAPI-Application-Key': [Your Alyien Api key],
+      'X-AYLIEN-TextAPI-Application-ID': [Your Alyien Api Id],
     }
   })
   const data=await handleResponse(response);
@@ -184,8 +184,8 @@ async function getHashtags(text){
   const response=await fetch(`https://api.aylien.com/api/v1/hashtags?text=${text}`,{
     "method": "GET",
     "headers": {
-      'X-AYLIEN-TextAPI-Application-Key': '95992005feb08d0e75521b817ce02d47',
-      'X-AYLIEN-TextAPI-Application-ID': 'a3d15c16',
+      'X-AYLIEN-TextAPI-Application-Key': [Your Alyien Api key],
+      'X-AYLIEN-TextAPI-Application-ID': [Your Alyien Api Id],
     }
   })
   const data=await handleResponse(response);
